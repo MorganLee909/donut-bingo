@@ -1,0 +1,24 @@
+{
+  "name": "donut-bingo",
+  "version": "1.0.0",
+  "description": "Bingo for Donut Operator TV",
+  "homepage": "https://github.com/MorganLee909/donut-bingo#readme",
+  "bugs": {
+    "url": "https://github.com/MorganLee909/donut-bingo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorganLee909/donut-bingo.git"
+  },
+  "license": "ISC",
+  "author": "Lee Morgan",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongod": "^2.0.0"
+  }
+}
