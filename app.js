@@ -7,11 +7,14 @@ import http from "http";
 
 import routes from "./routes.js";
 import websockets from "./websockets.js";
+import createHtml from "./createHtml.js";
 
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({server, path: "/ws"});
 mongoose.connect("mongodb://127.0.0.1/bingo");
+global.cwd = import.meta.dirname;
+global.html = await createHtml();
 
 app.use(compression());
 app.use(express.json());
@@ -20,4 +23,4 @@ app.use(cors());
 websockets(wss);
 
 routes(app);
-app.listen(8000);
+server.listen(8000);
