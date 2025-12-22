@@ -36,10 +36,10 @@ export default async ()=>{
     });
 
     data = data.replace('<script></script>', `<script>${js}</script>`);
-    data = data.replace('<style></stryle>', `<style>${css}</style>`);
+    data = data.replace('<style></style>', `<style>${css}</style>`);
 
     if(process.env.NODE_ENV !== "production"){
-        fs.writeFile(`${import.meta.dirname}/build.html`, data);
+        fs.writeFile(`${import.meta.dirname}/views/build.html`, data);
     }
 
     return data;
