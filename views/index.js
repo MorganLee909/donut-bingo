@@ -55,7 +55,9 @@ document.getElementById("start").addEventListener("click", ()=>{
     for(let i = 0; i < tds.length; i++){
         const p = document.createElement("p");
         p.textContent = inputs[i];
-        if(tds[i].firstChild) tds[i].removeChild(tds[i].firstChild);
+        while(tds[i].children.length > 0){
+            tds[i].removeChild(tds[i].firstChild);
+        }
         tds[i].appendChild(p);
     }
 });
