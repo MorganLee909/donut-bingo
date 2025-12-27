@@ -20,7 +20,6 @@ for(let i = 0; i < 5; i++){
     const tr = document.createElement("tr");
     for(let j = 0; j < 5; j++){
         const td = document.createElement("td");
-        if(i === 2 && j == 2) td.textContent = "Free";
         tr.appendChild(td);
         blocks.push(td);
     }
@@ -54,7 +53,10 @@ document.getElementById("start").addEventListener("click", ()=>{
     shuffle(inputs);
     const tds = document.querySelectorAll("#tbody td");
     for(let i = 0; i < tds.length; i++){
-        tds[i].textContent = inputs[i];
+        const p = document.createElement("p");
+        p.textContent = inputs[i];
+        if(tds[i].firstChild) tds[i].removeChild(tds[i].firstChild);
+        tds[i].appendChild(p);
     }
 });
 
